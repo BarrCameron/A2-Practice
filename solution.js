@@ -118,14 +118,145 @@
 // alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a CUBIC ROOT)
 
 
-//STRING CONCATENATION
+// //STRING CONCATENATION
 
-alert("test" + "string"); //Returns "teststring"
+// alert("test" + "string"); //Returns "teststring"
 
-alert( '1' + 2 ); // "12"
-alert( 2 + '1' ); // "21"
+// alert( '1' + 2 ); // "12"
+// alert( 2 + '1' ); // "21"
 
-alert(2 + 2 + '1' ); // "41" and not "221"
+// alert(2 + 2 + '1' ); // "41" and not "221"
 
-alert('1' + 2 + 2); // "122" and not "14"
-// If the first operator is a string, the following operaotors are treated as strings too.
+// alert('1' + 2 + 2); // "122" and not "14"
+// // If the first operator is a string, the following operaotors are treated as strings too.
+
+
+// //Using + with unary operands
+// // Converts non-numbers
+// alert( +true ); // 1
+// alert( +"" );   // 0
+
+// let apples = "2";
+// let oranges = "3";
+
+// alert(apples + oranges); // This will return "23" because the 2 and the 3 are seen as strings
+// // both values converted to numbers before the binary plus
+// alert( +apples + +oranges ); // 5
+
+// the longer variant
+// alert( Number(apples) + Number(oranges) ); // 5
+
+// //ICREMENT AND DECREMENT
+// let counter = 2;
+// counter++;
+// alert(counter); //3
+
+// counter--;
+// alert(counter); //back to 2
+// // Can only be used on variables, not numbers (can't do 5++)
+
+// //COMPARISONS
+// // All comparison operators return a boolean value. 
+
+// alert( 2 > 1 );  // true (correct)
+// alert( 2 == 1 ); // false (wrong)  -  "==" means does a = b
+// alert( 2 != 1 ); // true (correct) -  "!=" means does a not equal b 
+
+// //A comparison result can be assigned to a variable, just like any value:
+// let result = 5 > 4; // assign the result of the comparison
+// alert( result ); // true
+
+// //Comparing different types
+// alert( '2' > 1 ); // true, string '2' becomes a number 2
+// alert( '01' == 1 ); // true, string '01' becomes a number 1
+
+//STRICT EQUALITY OPERATOR
+// Checks the equality without type conversion
+// If a and b are of different types, "===" immediatley returns false
+
+// alert( 0 === false ); // false, because the types are different
+// alert("0" === 0);     // Returns false
+
+
+//CONDITIONAL BRANCHING, IF
+
+// let year = prompt("When was I born?", "")
+
+// if ( year == 2004){
+//     alert("well done dummy!")
+//     alert("wasn't a hard question")
+// } else {
+//     alert("wowwwww, what a ggreat friend")
+//     alert("you're done")
+// }
+
+// //Multiple nested if statments with "?"
+// let age = prompt('age?', 18);
+
+// let message = (age < 3) ? 'Hi, baby!' :
+//   (age < 18) ? 'Hello!' :
+//   (age < 100) ? 'Greetings!' :
+//   'What an unusual age!';
+
+// alert( message );
+
+// //Multiple nested if statements normally
+// if (age < 3) {
+//   message = 'Hi, baby!';
+// } else if (age < 18) {
+//   message = 'Hello!';
+// } else if (age < 100) {
+//   message = 'Greetings!';
+// } else {
+//   message = 'What an unusual age!';
+// }
+
+//TASKS
+// let answer = prompt("What is the official name of JavaScript?", "");
+
+// if (answer == "ECMAScript"){
+//     alert("You're Right!")
+// } else {
+//     alert("You don't know? It's ECMAScript!")
+// }
+
+// let number = prompt("Give me any number", "")
+
+// if (number > 0){
+//     alert(1);
+// }else if (number < 0) {
+//     alert(-1);
+// }else{
+//     alert(0);
+// }
+
+// let result;
+
+// result = (a + b < 4) ? "Below" : "Over";
+
+
+// let message;
+
+// message = (login == 'Employee') ? "Hello!":
+//           (login == "Director") ? "Greetings":
+//           (login == "") ? "No Login":
+//           "";
+
+
+
+//LOGICAL OPERATORS
+//OR operator (||)
+let hour = 12;
+let isWeekend = true;
+
+if (hour < 10 || hour > 18 || isWeekend == true) {
+  alert( 'The office is closed.' ); // it is the weekend
+}
+
+//AND operator (&&)
+let hour2 = 12;
+let minute = 30;
+
+if (hour2 == 12 && minute == 30) {
+  alert( 'The time is 12:30' );
+}
